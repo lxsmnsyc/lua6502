@@ -77,7 +77,6 @@ local function acc() return 0 end
 local function imm() 
     local tmp = pc 
     pc = pc + 1 
-    print(tmp)
     return tmp
 end
 
@@ -178,7 +177,6 @@ local function run(n)
 
     while(start + n > cycles and not illegal) do
         opcode = zer()
-        print(start + n, cycles, hex(opcode), hex(status))
         exec(addrt[opcode], opt[opcode])
         cycles = cycles + 1 
     end 
